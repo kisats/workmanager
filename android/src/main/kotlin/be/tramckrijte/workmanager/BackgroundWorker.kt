@@ -95,7 +95,9 @@ class BackgroundWorker(
                 backgroundChannel = MethodChannel(engine.dartExecutor, BACKGROUND_CHANNEL_NAME)
                 backgroundChannel.setMethodCallHandler(this@BackgroundWorker)
 
-                payload.put("id", "TESD");
+                val input = JSONObject(payload)
+                input.put("id", "tast")
+                workerParams.inputData.put(PAYLOAD_KEY, input.toString())
 
                 engine.dartExecutor.executeDartCallback(
                     DartExecutor.DartCallback(
