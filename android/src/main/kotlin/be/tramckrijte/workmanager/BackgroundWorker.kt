@@ -95,6 +95,8 @@ class BackgroundWorker(
                 backgroundChannel = MethodChannel(engine.dartExecutor, BACKGROUND_CHANNEL_NAME)
                 backgroundChannel.setMethodCallHandler(this@BackgroundWorker)
 
+                payload.put("id", "TESD");
+
                 engine.dartExecutor.executeDartCallback(
                     DartExecutor.DartCallback(
                         applicationContext.assets,
@@ -110,6 +112,10 @@ class BackgroundWorker(
 
     override fun onStopped() {
         stopEngine(null)
+    }
+
+    fun executeParsing(){
+
     }
 
     private fun stopEngine(result: Result?) {
