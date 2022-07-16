@@ -16,6 +16,7 @@ import io.flutter.plugin.common.MethodCall
 import io.flutter.plugin.common.MethodChannel
 import io.flutter.view.FlutterCallbackInformation
 import java.util.Random
+import org.json.JSONObject
 
 /***
  * A simple worker that will post your input back to your Flutter application.
